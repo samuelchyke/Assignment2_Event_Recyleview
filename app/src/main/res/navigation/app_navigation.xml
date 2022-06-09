@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/MainFragment"
+    android:id="@+id/app_navigation">
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.itc.recycleviewroomdatabase.ui.fragments.MainFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_main_to_entryFragment"
+            app:destination="@id/EntryFragment"
+            />
+        <action
+            android:id="@+id/action_main_to_detailFragment"
+            app:destination="@id/DetailFragment"
+            />
+
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/EntryFragment"
+        android:name="com.itc.recycleviewroomdatabase.ui.fragments.EntryFragment"
+        android:label="Entry Fragment"
+        tools:layout="@layout/fragment_entry">
+
+    <action
+        android:id="@+id/action_entry_to_mainFragment"
+        app:destination="@id/MainFragment"
+        />
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/DetailFragment"
+        android:name="com.itc.recycleviewroomdatabase.ui.fragments.UpdateFragment"
+        android:label="Detail Fragment"
+        tools:layout="@layout/fragment_details">
+        <action
+            android:id="@+id/action_detail_to_mainFragment"
+            app:destination="@id/MainFragment"/>
+        <argument
+            android:name="currentEvent"
+            app:argType="com.itc.recycleviewroomdatabase.model.Event" />
+
+    </fragment>
+
+
+
+
+
+</navigation>
